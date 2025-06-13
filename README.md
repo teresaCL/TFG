@@ -14,7 +14,7 @@
 
 ### Instrucciones de ejecución
 Este repositorio contiene dos programas:
-- El primero (```main_smdeclust.py```) implementa diversas modificaciones sobre el algoritmo memético S-MDEClust, desarrollado por Mansueto, P. & Schoen, F.
+- El primero (```main_smdeclust.py```) implementa diversas modificaciones sobre el algoritmo memético S-MDEClust propuesto por Mansueto, P. & Schoen, F.
 
   Más información en:
   - [Artículo original](https://arxiv.org/abs/2403.04322)
