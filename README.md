@@ -15,9 +15,10 @@
 ### Instrucciones de ejecución
 Este repositorio contiene dos programas:
 - El primero (```main_smdeclust.py```) implementa diversas modificaciones sobre el algoritmo memético S-MDEClust, desarrollado por Mansueto, P. & Schoen, F.
+
   Más información en:
-  [Artículo original](https://arxiv.org/abs/2403.04322)
-  [Repositorio oficial](https://github.com/pierlumanzu/s_mdeclust?tab=readme-ov-file)
+  - [Artículo original](https://arxiv.org/abs/2403.04322)
+  - [Repositorio oficial](https://github.com/pierlumanzu/s_mdeclust?tab=readme-ov-file)
 
   Ejemplo de uso: ```python main_smdeclust.py --dataset Data/iris.txt --constraints Data/constraint_sets/iris/ml_25_cl_25_0.json --P 20 --K 3 --assignment greedy_rand --crossover pbest_v1 --restart 3```
 
@@ -29,7 +30,7 @@ En los archivos ```args_utils_smdeclust.py``` y ```args_utils_grasp.py``` se pue
 
 Para ejecutar el código es necesario un entorno [Anaconda](https://www.anaconda.com/). Además, será necesario instalar [Gurobi](https://www.gurobi.com/) Optimizer y poseer de una licencia válida.
 
-#### Principales paquetes
+#### Paquetes principales 
 
 * ```python v3.11.9```
 * ```pip v24.0```
