@@ -20,11 +20,12 @@ Este repositorio contiene dos programas:
   - [Artículo original](https://arxiv.org/abs/2403.04322)
   - [Repositorio oficial](https://github.com/pierlumanzu/s_mdeclust?tab=readme-ov-file)
 
-  Ejemplo de uso: ```python main_smdeclust.py --dataset Data/iris.txt --constraints Data/constraint_sets/iris/ml_25_cl_25_0.json --P 20 --K 3 --assignment greedy_rand --crossover pbest_v1 --restart 3```
+  **Ejemplo de uso**: ```python main_smdeclust.py --dataset Data/iris.txt --constraints Data/constraint_sets/iris/ml_25_cl_25_0.json --P 20 --K 3 --assignment greedy_rand --crossover pbest_v1 --restart 3```
 
 
 - El segundo programa implementa un enfoque GRASP para abordar el problema de clustering semisupervisado (```main_grasp.py```)
-  Ejemplo de uso: ```python main_grasp.py --dataset Data/iris.txt --constraints Data/constraint_sets/iris/ml_25_cl_25_0.json --P 20 --K 3 --assignment greedy --Nmax 3 --max_iter 30```
+
+  **Ejemplo de uso**: ```python main_grasp.py --dataset Data/iris.txt --constraints Data/constraint_sets/iris/ml_25_cl_25_0.json --P 20 --K 3 --assignment greedy --Nmax 3 --max_iter 30```
 
 En los archivos ```args_utils_smdeclust.py``` y ```args_utils_grasp.py``` se pueden encontrar todos los posibles argumentos para cada programa.
 
