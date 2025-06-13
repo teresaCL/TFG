@@ -1,0 +1,33 @@
+\begin{table}[h!]
+\centering
+\begin{tabular}{|r|r|r|r|r|}
+\hline
+ & \multicolumn{2}{c|}{R-3IT-2-DIS-PBEST1-F} & \multicolumn{2}{c|}{R-3IT-2-DIS-PBEST1-F-SW} \\ 
+\hline
+Dataset & {{Score}} & {{Time (s)}} & {{Score}} & {{Time (s)}} \\ 
+\hline
+Iris & {\color{black}+0.000} & {\color{red}+5.3} & {\color{black}+0.000} & {\color{red}+5.1} \\ 
+Wine & {\color{black}+0.000} & {\color{red}+6.0} & {\color{black}+0.000} & {\color{red}+6.1} \\ 
+Connectionist & {\color{black}+0.000} & {\color{red}+6.8} & {\color{black}+0.000} & {\color{red}+7.1} \\ 
+Seeds & {\color{black}+0.000} & {\color{red}+6.8} & {\color{black}+0.000} & {\color{red}+7.2} \\ 
+Heart & {\color{blue}-0.004} & {\color{red}+11.5} & {\color{blue}-0.004} & {\color{red}+12.5} \\ 
+Vertebral & {\color{black}+0.000} & {\color{red}+3.9} & {\color{black}+0.000} & {\color{red}+4.3} \\ 
+Computers & {\color{blue}-0.154} & {\color{red}+23.5} & {\color{blue}-0.154} & {\color{red}+25.0} \\ 
+Gene & {\color{black}+0.000} & {\color{red}+454.7} & {\color{black}+0.000} & {\color{red}+479.7} \\ 
+Movement Libras & {\color{blue}-0.377} & {\color{red}+92.3} & {\color{blue}-0.434} & {\color{red}+97.8} \\ 
+Toxicity & {\color{blue}-4.983e+13} & {\color{red}+3.2} & {\color{blue}-4.983e+13} & {\color{red}+3.2} \\ 
+ECG5000 & {\color{blue}-0.090} & {\color{red}+61.0} & {\color{blue}-0.073} & {\color{red}+60.3} \\ 
+Ecoli & {\color{black}+0.000} & {\color{red}+47.6} & {\color{blue}-0.004} & {\color{red}+55.5} \\ 
+Glass & {\color{blue}-0.047} & {\color{red}+21.4} & {\color{blue}-0.029} & {\color{red}+20.9} \\ 
+Accent & {\color{blue}-0.070} & {\color{red}+44.1} & {\color{blue}-0.070} & {\color{red}+45.9} \\ 
+\hline
+Promedio & {\color{blue}-3.559e+12} & {\color{red}+56.3} & {\color{blue}-3.559e+12} & {\color{red}+59.3} \\ 
+\hline
+Veces mejor & 7 & - & 8 & - \\ 
+Veces igual & 7 & - & 6 & - \\ 
+Veces peor & 0 & - & 0 & - \\ 
+\hline
+\end{tabular}
+\caption{Comparativa R-3IT-2-DIS-PBEST1-F y R-3IT-2-DIS-PBEST1-F-SW}
+\label{tabla-R-3IT-2-DIS-PBEST1-F-R-3IT-2-DIS-PBEST1-F-SW}
+\end{table}

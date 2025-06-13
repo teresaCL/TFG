@@ -1,0 +1,12 @@
+dataset;Data/ECG5000.txt
+constraints;Data/constraint_sets/ECG5000/ml_250_cl_0_2.json
+K;5
+seed;42
+verbose;False
+assignment;greedy
+mutation;False
+Nmax;3
+max_iter;30
+Nmax_ls;1
+max_iter_ls;inf
+tol_sol;1e-06

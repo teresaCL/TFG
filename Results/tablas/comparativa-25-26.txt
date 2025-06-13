@@ -1,0 +1,33 @@
+\begin{table}[h!]
+\centering
+\begin{tabular}{|r|r|r|r|r|}
+\hline
+ & \multicolumn{2}{c|}{PBEST1-F-AGR-RAND} & \multicolumn{2}{c|}{PBEST1-F-AGR-RAND-SW} \\ 
+\hline
+Dataset & {{Score}} & {{Time (s)}} & {{Score}} & {{Time (s)}} \\ 
+\hline
+Iris & {\color{black}+0.000} & {\color{red}+0.3} & {\color{black}+0.000} & {\color{red}+0.4} \\ 
+Wine & {\color{black}+0.000} & {\color{red}+0.4} & {\color{black}+0.000} & {\color{red}+0.5} \\ 
+Connectionist & {\color{black}+0.000} & {\color{red}+0.6} & {\color{black}+0.000} & {\color{red}+0.7} \\ 
+Seeds & {\color{black}+0.000} & {\color{red}+0.5} & {\color{black}+0.000} & {\color{red}+0.6} \\ 
+Heart & {\color{blue}-0.004} & {\color{blue}-0.5} & {\color{blue}-0.004} & {\color{red}+0.2} \\ 
+Vertebral & {\color{black}+0.000} & {\color{red}+0.4} & {\color{black}+0.000} & {\color{red}+0.4} \\ 
+Computers & {\color{blue}-0.154} & {\color{red}+0.4} & {\color{blue}-0.144} & {\color{red}+1.8} \\ 
+Gene & {\color{black}+0.000} & {\color{blue}-7.9} & {\color{black}+0.000} & {\color{red}+10.9} \\ 
+Movement Libras & {\color{blue}-0.103} & {\color{blue}-17.0} & {\color{blue}-0.153} & {\color{blue}-13.2} \\ 
+Toxicity & {\color{black}+0.000} & {\color{red}+0.3} & {\color{black}+0.000} & {\color{red}+0.3} \\ 
+ECG5000 & {\color{red}+0.077} & {\color{blue}-2.4} & {\color{blue}-0.087} & {\color{blue}-0.7} \\ 
+Ecoli & {\color{red}+0.001} & {\color{blue}-5.9} & {\color{blue}-0.001} & {\color{blue}-3.9} \\ 
+Glass & {\color{red}+0.018} & {\color{blue}-1.0} & {\color{blue}-0.016} & {\color{red}+0.7} \\ 
+Accent & {\color{blue}-0.033} & {\color{blue}-2.8} & {\color{blue}-0.070} & {\color{blue}-1.4} \\ 
+\hline
+Promedio & {\color{blue}-0.014} & {\color{blue}-2.5} & {\color{blue}-0.034} & {\color{blue}-0.2} \\ 
+\hline
+Veces mejor & 4 & - & 7 & - \\ 
+Veces igual & 7 & - & 7 & - \\ 
+Veces peor & 3 & - & 0 & - \\ 
+\hline
+\end{tabular}
+\caption{Comparativa PBEST1-F-AGR-RAND y PBEST1-F-AGR-RAND-SW}
+\label{tabla-PBEST1-F-AGR-RAND-PBEST1-F-AGR-RAND-SW}
+\end{table}

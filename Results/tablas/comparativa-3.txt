@@ -1,0 +1,31 @@
+\begin{table}[h!]
+\centering
+\begin{tabular}{|r|r|r|}
+\hline
+Dataset & {{Score}} & {{Time (s)}} \\ 
+\hline
+Iris & {\color{black}+0.000} & {\color{black}+0.0} \\ 
+Wine & {\color{red}+39.893} & {\color{red}+0.1} \\ 
+Connectionist & {\color{black}+0.000} & {\color{red}+0.4} \\ 
+Seeds & {\color{black}+0.000} & {\color{red}+0.2} \\ 
+Heart & {\color{blue}-0.004} & {\color{black}+0.0} \\ 
+Vertebral & {\color{black}+0.000} & {\color{red}+0.1} \\ 
+Computers & {\color{blue}-0.017} & {\color{red}+1.4} \\ 
+Gene & {\color{black}+0.000} & {\color{blue}-15.5} \\ 
+Movement Libras & {\color{red}+0.030} & {\color{blue}-2.2} \\ 
+Toxicity & {\color{black}+0.000} & {\color{red}+0.1} \\ 
+ECG5000 & {\color{blue}-0.044} & {\color{red}+1.6} \\ 
+Ecoli & {\color{red}+0.002} & {\color{red}+3.2} \\ 
+Glass & {\color{blue}-0.035} & {\color{red}+3.5} \\ 
+Accent & {\color{blue}-0.070} & {\color{red}+2.9} \\ 
+\hline
+Promedio & {\color{red}+2.840} & {\color{blue}-0.3} \\ 
+\hline
+Veces mejor & 5 & - \\ 
+Veces igual & 6 & - \\ 
+Veces peor & 3 & - \\ 
+\hline
+\end{tabular}
+\caption{Resultados ASG-GR-RAND-PEN}
+\label{tabla-ASG-GR-RAND-PEN}
+\end{table}

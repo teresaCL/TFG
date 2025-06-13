@@ -1,0 +1,31 @@
+\begin{table}[h!]
+\centering
+\begin{tabular}{|r|r|r|}
+\hline
+Dataset & {{Score}} & {{Time (s)}} \\ 
+\hline
+Iris & {\color{red}+0.025} & {\color{blue}-0.3} \\ 
+Wine & {\color{red}+24461.053} & {\color{blue}-0.1} \\ 
+Connectionist & {\color{red}+0.041} & {\color{blue}-0.6} \\ 
+Seeds & {\color{red}+0.008} & {\color{red}+0.5} \\ 
+Heart & {\color{red}+1.681} & {\color{blue}-1.6} \\ 
+Vertebral & {\color{red}+10.438} & {\color{red}+2.0} \\ 
+Computers & {\color{red}+134.362} & {\color{red}+2.0} \\ 
+Gene & {\color{red}+101.498} & {\color{blue}-68.1} \\ 
+Movement Libras &  &  \\ 
+Toxicity &  &  \\ 
+ECG5000 &  &  \\ 
+Ecoli &  &  \\ 
+Glass &  &  \\ 
+Accent &  &  \\ 
+\hline
+Promedio & {\color{red}+3088.638} & {\color{blue}-8.3} \\ 
+\hline
+Veces mejor & 0 & - \\ 
+Veces igual & 0 & - \\ 
+Veces peor & 8 & - \\ 
+\hline
+\end{tabular}
+\caption{Resultados GRASP}
+\label{tabla-GRASP}
+\end{table}

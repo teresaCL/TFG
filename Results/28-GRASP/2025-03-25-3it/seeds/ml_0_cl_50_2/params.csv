@@ -1,0 +1,12 @@
+dataset;Data/seeds.txt
+constraints;Data/constraint_sets/seeds/ml_0_cl_50_2.json
+K;3
+seed;42
+verbose;False
+assignment;greedy
+mutation;False
+Nmax;3
+max_iter;30
+Nmax_ls;1
+max_iter_ls;inf
+tol_sol;1e-06

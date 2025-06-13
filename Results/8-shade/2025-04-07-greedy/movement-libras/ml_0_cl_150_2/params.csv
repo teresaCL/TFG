@@ -1,0 +1,16 @@
+dataset;Data/movement-libras.txt
+constraints;Data/constraint_sets/movement-libras/ml_0_cl_150_2.json
+K;15
+seed;42
+verbose;False
+title;greedy
+assignment;greedy
+mutation;True
+P;20
+Nmax;5000
+max_iter;inf
+tol_pop;0,0001
+Nmax_ls;1
+max_iter_ls;inf
+tol_sol;1e-06
+alpha;0,5

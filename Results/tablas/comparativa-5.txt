@@ -1,0 +1,31 @@
+\begin{table}[h!]
+\centering
+\begin{tabular}{|r|r|r|}
+\hline
+Dataset & {{Score}} & {{Time (s)}} \\ 
+\hline
+Iris & {\color{black}+0.000} & {\color{blue}-0.1} \\ 
+Wine & {\color{red}+39.893} & {\color{black}+0.0} \\ 
+Connectionist & {\color{black}+0.000} & {\color{red}+0.6} \\ 
+Seeds & {\color{black}+0.000} & {\color{red}+0.2} \\ 
+Heart & {\color{blue}-0.004} & {\color{red}+0.7} \\ 
+Vertebral & {\color{black}+0.000} & {\color{black}+0.0} \\ 
+Computers & {\color{blue}-0.203} & {\color{red}+2.0} \\ 
+Gene & {\color{black}+0.000} & {\color{red}+14.3} \\ 
+Movement Libras & {\color{blue}-0.003} & {\color{red}+2.9} \\ 
+Toxicity & {\color{black}+0.000} & {\color{red}+0.1} \\ 
+ECG5000 & {\color{blue}-0.060} & {\color{red}+2.9} \\ 
+Ecoli & {\color{red}+0.001} & {\color{blue}-1.0} \\ 
+Glass & {\color{red}+0.036} & {\color{red}+2.2} \\ 
+Accent & {\color{red}+0.308} & {\color{red}+4.9} \\ 
+\hline
+Promedio & {\color{red}+2.855} & {\color{red}+2.1} \\ 
+\hline
+Veces mejor & 4 & - \\ 
+Veces igual & 6 & - \\ 
+Veces peor & 4 & - \\ 
+\hline
+\end{tabular}
+\caption{Resultados SW-WO-PEN}
+\label{tabla-SW-WO-PEN}
+\end{table}

@@ -1,0 +1,17 @@
+dataset;Data/accent.txt
+constraints;Data/constraint_sets/accent/ml_75_cl_75_0.json
+K;6
+seed;42
+verbose;False
+title;greedy_rand
+assignment;greedy_rand
+mutation;True
+P;20
+Nmax;5000
+max_iter;inf
+tol_pop;0,0001
+Nmax_ls;1
+max_iter_ls;inf
+tol_sol;1e-06
+F;mdeclust
+alpha;0,5

@@ -1,0 +1,12 @@
+dataset;Data/wine.txt
+constraints;Data/constraint_sets/wine/ml_50_cl_50_1.json
+K;3
+seed;42
+verbose;False
+assignment;greedy
+mutation;False
+Nmax;3
+max_iter;30
+Nmax_ls;1
+max_iter_ls;inf
+tol_sol;1e-06

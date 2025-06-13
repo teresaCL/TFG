@@ -1,0 +1,31 @@
+\begin{table}[h!]
+\centering
+\begin{tabular}{|r|r|r|}
+\hline
+Dataset & {{Score}} & {{Time (s)}} \\ 
+\hline
+Iris & {\color{black}+0.000} & {\color{red}+0.3} \\ 
+Wine & {\color{black}+0.000} & {\color{red}+0.4} \\ 
+Connectionist & {\color{black}+0.000} & {\color{red}+0.6} \\ 
+Seeds & {\color{black}+0.000} & {\color{red}+0.5} \\ 
+Heart & {\color{blue}-0.004} & {\color{blue}-0.5} \\ 
+Vertebral & {\color{black}+0.000} & {\color{red}+0.4} \\ 
+Computers & {\color{blue}-0.154} & {\color{red}+0.4} \\ 
+Gene & {\color{black}+0.000} & {\color{blue}-7.9} \\ 
+Movement Libras & {\color{blue}-0.103} & {\color{blue}-17.0} \\ 
+Toxicity & {\color{black}+0.000} & {\color{red}+0.3} \\ 
+ECG5000 & {\color{red}+0.077} & {\color{blue}-2.4} \\ 
+Ecoli & {\color{red}+0.001} & {\color{blue}-5.9} \\ 
+Glass & {\color{red}+0.018} & {\color{blue}-1.0} \\ 
+Accent & {\color{blue}-0.033} & {\color{blue}-2.8} \\ 
+\hline
+Promedio & {\color{blue}-0.014} & {\color{blue}-2.5} \\ 
+\hline
+Veces mejor & 4 & - \\ 
+Veces igual & 7 & - \\ 
+Veces peor & 3 & - \\ 
+\hline
+\end{tabular}
+\caption{Resultados PBEST1-F-AGR-RAND}
+\label{tabla-PBEST1-F-AGR-RAND}
+\end{table}

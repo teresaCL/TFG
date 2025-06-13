@@ -1,0 +1,33 @@
+\begin{table}[h!]
+\centering
+\begin{tabular}{|r|r|r|r|r|}
+\hline
+ & \multicolumn{2}{c|}{R-3IT-2-PBEST1-F} & \multicolumn{2}{c|}{R-3IT-2-PBEST1-F-AGR-RAND} \\ 
+\hline
+Dataset & {{Score}} & {{Time (s)}} & {{Score}} & {{Time (s)}} \\ 
+\hline
+Iris & {\color{black}+0.000} & {\color{red}+4.0} & {\color{black}+0.000} & {\color{red}+4.4} \\ 
+Wine & {\color{black}+0.000} & {\color{red}+4.9} & {\color{black}+0.000} & {\color{red}+5.7} \\ 
+Connectionist & {\color{black}+0.000} & {\color{red}+5.3} & {\color{black}+0.000} & {\color{red}+6.4} \\ 
+Seeds & {\color{black}+0.000} & {\color{red}+5.5} & {\color{black}+0.000} & {\color{red}+6.5} \\ 
+Heart & {\color{blue}-0.004} & {\color{red}+9.1} & {\color{blue}-0.004} & {\color{red}+10.4} \\ 
+Vertebral & {\color{black}+0.000} & {\color{red}+3.6} & {\color{black}+0.000} & {\color{red}+4.0} \\ 
+Computers & {\color{blue}-0.154} & {\color{red}+19.7} & {\color{blue}-0.154} & {\color{red}+24.1} \\ 
+Gene & {\color{black}+0.000} & {\color{red}+350.6} & {\color{black}+0.000} & {\color{red}+348.9} \\ 
+Movement Libras & {\color{blue}-0.354} & {\color{red}+56.8} & {\color{blue}-0.340} & {\color{red}+66.1} \\ 
+Toxicity & {\color{blue}-4.983e+13} & {\color{red}+2.3} & {\color{blue}-4.983e+13} & {\color{red}+2.5} \\ 
+ECG5000 & {\color{blue}-0.090} & {\color{red}+41.3} & {\color{blue}-0.090} & {\color{red}+50.4} \\ 
+Ecoli & {\color{blue}-0.003} & {\color{red}+39.9} & {\color{blue}-0.004} & {\color{red}+40.6} \\ 
+Glass & {\color{blue}-0.028} & {\color{red}+15.2} & {\color{blue}-0.047} & {\color{red}+17.6} \\ 
+Accent & {\color{blue}-0.070} & {\color{red}+35.3} & {\color{blue}-0.070} & {\color{red}+34.7} \\ 
+\hline
+Promedio & {\color{blue}-3.559e+12} & {\color{red}+42.4} & {\color{blue}-3.559e+12} & {\color{red}+44.5} \\ 
+\hline
+Veces mejor & 8 & - & 8 & - \\ 
+Veces igual & 6 & - & 6 & - \\ 
+Veces peor & 0 & - & 0 & - \\ 
+\hline
+\end{tabular}
+\caption{Comparativa R-3IT-2-PBEST1-F y R-3IT-2-PBEST1-F-AGR-RAND}
+\label{tabla-R-3IT-2-PBEST1-F-R-3IT-2-PBEST1-F-AGR-RAND}
+\end{table}

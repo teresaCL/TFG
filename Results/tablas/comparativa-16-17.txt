@@ -1,0 +1,33 @@
+\begin{table}[h!]
+\centering
+\begin{tabular}{|r|r|r|r|r|}
+\hline
+ & \multicolumn{2}{c|}{R-3IT-2-DIS} & \multicolumn{2}{c|}{R-3IT-2-DIS-SW} \\ 
+\hline
+Dataset & {{Score}} & {{Time (s)}} & {{Score}} & {{Time (s)}} \\ 
+\hline
+Iris & {\color{black}+0.000} & {\color{red}+4.7} & {\color{black}+0.000} & {\color{red}+5.1} \\ 
+Wine & {\color{black}+0.000} & {\color{red}+5.6} & {\color{black}+0.000} & {\color{red}+6.0} \\ 
+Connectionist & {\color{black}+0.000} & {\color{red}+6.9} & {\color{black}+0.000} & {\color{red}+7.2} \\ 
+Seeds & {\color{black}+0.000} & {\color{red}+6.7} & {\color{black}+0.000} & {\color{red}+7.1} \\ 
+Heart & {\color{blue}-0.004} & {\color{red}+11.5} & {\color{blue}-0.004} & {\color{red}+12.4} \\ 
+Vertebral & {\color{black}+0.000} & {\color{red}+4.1} & {\color{black}+0.000} & {\color{red}+4.3} \\ 
+Computers & {\color{blue}-0.203} & {\color{red}+24.0} & {\color{blue}-0.154} & {\color{red}+26.9} \\ 
+Gene & {\color{black}+0.000} & {\color{red}+461.8} & {\color{black}+0.000} & {\color{red}+472.4} \\ 
+Movement Libras & {\color{blue}-0.191} & {\color{red}+126.9} & {\color{blue}-0.156} & {\color{red}+127.9} \\ 
+Toxicity & {\color{blue}-4.983e+13} & {\color{red}+3.1} & {\color{blue}-4.983e+13} & {\color{red}+3.3} \\ 
+ECG5000 & {\color{blue}-0.088} & {\color{red}+60.3} & {\color{blue}-0.038} & {\color{red}+63.4} \\ 
+Ecoli & {\color{blue}-0.004} & {\color{red}+58.2} & {\color{blue}-0.004} & {\color{red}+63.1} \\ 
+Glass & {\color{blue}-0.043} & {\color{red}+23.7} & {\color{blue}-0.041} & {\color{red}+25.5} \\ 
+Accent & {\color{red}+0.023} & {\color{red}+49.6} & {\color{blue}-0.035} & {\color{red}+50.4} \\ 
+\hline
+Promedio & {\color{blue}-3.559e+12} & {\color{red}+60.5} & {\color{blue}-3.559e+12} & {\color{red}+62.5} \\ 
+\hline
+Veces mejor & 7 & - & 8 & - \\ 
+Veces igual & 6 & - & 6 & - \\ 
+Veces peor & 1 & - & 0 & - \\ 
+\hline
+\end{tabular}
+\caption{Comparativa R-3IT-2-DIS y R-3IT-2-DIS-SW}
+\label{tabla-R-3IT-2-DIS-R-3IT-2-DIS-SW}
+\end{table}
