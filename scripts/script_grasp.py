@@ -1,4 +1,5 @@
 """
+Script ejecutar el algoritmo GRASP para todos los conjuntos de datos y guardar los resultados medios
 El script debe estar ubicado en el directorio raíz del proyecto.
 """
 import time

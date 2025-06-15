@@ -71,7 +71,7 @@ class S_MDEClust:
 
         if self.__decrease_pop_size_reset:
             self.__P *= 2
-            self.__Nmax += 2
+            self.__Nmax *= 2
 
         self.__verbose = verbose 
         self.__ls = BLPKM(Nmax_ls, max_iter_ls) # local search
@@ -122,7 +122,7 @@ class S_MDEClust:
                 phi[n_p, :], psi[n_p, :, :], scores[n_p], n_iter = self.__ls.run(D, centers, K, ML, CL)
                 n_iter_ls += n_iter
             else:
-                phi[n_p, :] = self.assign_objects(D, psi[n_p], ML, CL, ML_groups, CL_groups, True)
+                phi[n_p, :] = self.assign_objects(D, psi[n_p], ML, CL, ML_groups, CL_groups, True)  # exact assignment step
                 scores[n_p] = self.calculate_fitness(D, psi[n_p], phi[n_p], ML, CL)
 
             if self.__verbose:
@@ -176,7 +176,7 @@ class S_MDEClust:
         return new_psi1
     
     """
-    Assigns each point in D to a cluster center in 'centers', respecting must-link (ML) and cannot-link (CL) constraints.
+    Assigns each point in D to a cluster center in 'centers', trying to respect must-link (ML) and cannot-link (CL) constraints.
 
     Parameters:
     -----------
@@ -198,7 +198,7 @@ class S_MDEClust:
             n = D.shape[0]   # number of data points     
             k = centers.shape[0]   # number of clusters
 
-            # Compute the squared Euclidean distance between each point and each cluster
+            # Compute the squared Euclidean distance between each point and each cluster centroid
             distances = cdist(D, centers, metric='sqeuclidean')
             assignments = {(i, j): distances[i, j] for i in range(n) for j in range(k)}
 
@@ -256,7 +256,7 @@ class S_MDEClust:
                     # Compute distances for each centroid with penalty
                     distances = [
                         np.sum(np.linalg.norm(D[np.array(list(ml_gr))] - centers[k], axis=1) ** 2) +
-                        (0.5 * self.__greedy_penalty if len(set(groups_to_centers[k]) & CL_groups[idx_ml_gr]) != 0 else 0)
+                        (self.__greedy_penalty if len(set(groups_to_centers[k]) & CL_groups[idx_ml_gr]) != 0 else 0)
                         for k in range(len(centers))
                     ]
                     # Invert distances and normalize so they sum to 1 to obtain selection probabilities and select a cluster k
@@ -309,11 +309,11 @@ class S_MDEClust:
     """
     def crossover(self, D, psis, ML, CL, ML_groups, CL_groups):
         # Select F  
-        if self.__F == 'random':
+        if self.__F == 'random':    # F in (0,2)
             F = (1e-7 + np.random.rand() * (2-2e-7))        
-        elif self.__F == 'mdeclust':
+        elif self.__F == 'mdeclust':    # F in [0.5,0.8)
             F = (0.5 + np.random.rand() * 0.3)    
-        elif self.__F == 'half_mdeclust':
+        elif self.__F == 'half_mdeclust':   # F in [0.25,0.4)
             F = (0.25 + np.random.rand() * 0.15)    
         elif type(self.__F) == float or type(self.__F) == int:
             F = self.__F        
@@ -331,7 +331,7 @@ class S_MDEClust:
 
 
     """
-    Assigns each point in D to a cluster center in 'centers', respecting must-link (ML) and cannot-link (CL) constraints while excluding a centroid.
+    Assigns each point in D to a cluster center in 'centers', trying to respect must-link (ML) and cannot-link (CL) constraints while excluding a centroid.
 
     Parameters:
     -----------
@@ -343,7 +343,6 @@ class S_MDEClust:
         idx_c (int): Index of the removed cluster.
         ML_groups (list of sets): Each set represents a group of points that must be in the same cluster.  
         CL_groups (list of sets): The set at the i-th position contains the indices of the ML groups that cannot be in the same cluster as group i.
-        exact(bool): Is True, force to use the exact assignment.
 
     Returns:
     --------
@@ -439,9 +438,9 @@ class S_MDEClust:
                     probs /= probs.sum() 
                     ml_gr_k = np.random.choice(len(distances), p=probs)
 
-                elif self.__assignment == 'greedy_rand': # len(possible_ks) > 0 y greedy_rand
+                elif self.__assignment == 'greedy_rand': 
                     # Indices of the clusters where the points in the ML group ml_gr can be assigned
-                    possible_ks = np.array([k for k in range(len(centers)) if len(set(groups_to_centers[k]) & CL_groups[idx_ml_gr]) == 0])
+                    possible_ks = np.array([k for k in range(len(centers)) if (k != idx_c) and (len(set(groups_to_centers[k]) & CL_groups[idx_ml_gr]) == 0)])
                     if len(possible_ks) == 0:
                         possible_ks = np.arange(len(centers))
 
@@ -494,8 +493,8 @@ class S_MDEClust:
     Parameters:
     -----------
         D (np.ndarray): Data matrix of dimension (N, d), where N is the number of samples and d is the feature dimension.
-        phi (np.ndarray): Membership vector of the original solution, with dimensions (N,), where N is the number of individuals.  
-        psi (np.ndarray): Matrix of centroids of the original solution, with dimensions (K x d), where K is the number of clusters and d is the feature dimension.  
+        phiO (np.ndarray): Membership vector of the original solution, with dimensions (N,), where N is the number of individuals.  
+        psiO (np.ndarray): Matrix of centroids of the original solution, with dimensions (K x d), where K is the number of clusters and d is the feature dimension.  
         ML: List of tuples (i, i'). Must-link constraints: points i and i' must belong to the same cluster.
         CL: List of tuples (i, i'). Cannot-link constraints: points i and i' cannot belong to the same cluster.
         ML_groups (list of sets): Each set represents a group of points that must be in the same cluster.  
@@ -739,8 +738,8 @@ class S_MDEClust:
         pop_collapsed (bool): Indicates whether the algorithm terminated due to population collapse into a single solution.
         best_scores (float): Score of the best individual in the population.
         pop_diversity (float): Measure of the population's diversity, indicating variation in solutions.
-        mean_scores (float): Average score of all individuals in the population.
         worst_scores (float): Score of the worst individual in the population.
+        mean_scores (float): Average score of all individuals in the population.
     """
     def run(self, D, K, ML, CL, seed, ML_groups, CL_groups):
         start_time = time.time()
@@ -748,7 +747,7 @@ class S_MDEClust:
         if self.__verbose:
             print('||' + 'N°iter'.rjust(20) + ' |' + 'Sol'.rjust(20) + ' |' + 'f*'.rjust(20) + ' |' + 'N°w/oImprBest'.rjust(20) + ' |' + 'Pop_tol'.rjust(20) + ' |' + 'N°ls'.rjust(20) + ' |' + 'N°iter_ls'.rjust(20) + ' |' + 'time'.rjust(20) + ' ||')
     
-        # Compute the penalty for greedy assignment: average of the differences between the maximum and minimum value of each attribute × number of attributes
+        # Compute the penalty for greedy assignment: average of the differences between the maximum and minimum value of each attribute × number of attributes × 0.5
         if self.__assignment == 'greedy_rand_penalty':
             self.__greedy_penalty = np.mean(np.max(D, axis=0) - np.min(D, axis=0)) * D.shape[1] * 0.5
 
@@ -850,9 +849,10 @@ class S_MDEClust:
                     idx_LS.extend(second_10pct)
                 
                 if self.__shade:
-                    S_CR = []
-                    S_F = []
-                    improvements = []
+                    S_CR = []   # list of successful CR parameters in this iteration
+                    S_F = []    # list of successful F parameters in this iteration
+                    improvements = []   # list of improvements in this iteration
+
                 # For each individual in the population
                 for s in range(self.__P):
                     if self.__shade:
@@ -866,7 +866,7 @@ class S_MDEClust:
                         self.__F = Fi
                         CRi = max(0, min(1, CRi))
                     else:
-                        CRi = 1
+                        CRi = 1 # crossover is applied with 100% probability
 
                     # Crossover
                     if (np.random.rand() < CRi):
@@ -890,7 +890,7 @@ class S_MDEClust:
                             psi1 = self.exact_matching(psi[s1], psi[s])
                             psi2 = self.exact_matching(psi[s2], psi[s])
                             psib = self.exact_matching(psi[sb], psi[s])
-                            phiO, psiO = self.crossover(D, [psi[s], psi1, psi2, psib], ML, CL, ML_groups, CL_groups)
+                            phiO, psiO = self.crossover(D, [psi[s], psib, psi1, psi2], ML, CL, ML_groups, CL_groups)
                     else:
                         psiO = psi[s].copy()
                         phiO = phi[s].copy()
@@ -911,7 +911,7 @@ class S_MDEClust:
                         n_iter_ls += add_n_iter_ls
                         total_ls += 1
                     else:
-                        phiO = self.assign_objects(D, psiO, ML, CL, ML_groups, CL_groups, True)
+                        phiO = self.assign_objects(D, psiO, ML, CL, ML_groups, CL_groups, True) # exact assignment step
                         scoreO = self.calculate_fitness(D, psiO, phiO, ML, CL)
 
 
@@ -962,5 +962,6 @@ class S_MDEClust:
 
                 if self.__decrease_pop_size_reset:
                     self.__P = int(self.__P / 2)
+                    self.__Nmax = int(self.__Nmax / 2)
 
         return phi[best_s_idx], psi[best_s_idx], scores[best_s_idx], total_it, total_ls, total_it_ls, time.time() - start_time, self.population_diversity(scores) < self.__tol_pop, best_scores, pop_diversity, worst_scores, mean_scores

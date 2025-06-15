@@ -1,0 +1,41 @@
+
+DATA_PATH, n, d, k: ../datasets/iris.txt 150 4 3
+CONSTRAINTS_PATH: ../constraints/iris/ml_0_cl_50_1.txt
+LOG_PATH: ../PRUEBAS/iris/log_iris_ml_0_cl_50_1.txt
+
+BRANCH_AND_BOUND_TOL: 0.0001
+BRANCH_AND_BOUND_PARALLEL: 16
+BRANCH_AND_BOUND_MAX_NODES: 200
+BRANCH_AND_BOUND_VISITING_STRATEGY: 0
+
+SDP_SOLVER_SESSION_THREADS_ROOT: 16
+SDP_SOLVER_SESSION_THREADS: 1
+SDP_SOLVER_FOLDER: /home/teresa/SDPNAL/SDPNAL+v1.0
+SDP_SOLVER_TOL: 1e-05
+SDP_SOLVER_VERBOSE: 0
+SDP_SOLVER_MAX_CP_ITER_ROOT: 80
+SDP_SOLVER_MAX_CP_ITER: 40
+SDP_SOLVER_CP_TOL: 1e-06
+SDP_SOLVER_MAX_INEQ: 100000
+SDP_SOLVER_INHERIT_PERC: 1
+SDP_SOLVER_EPS_INEQ: 0.0001
+SDP_SOLVER_EPS_ACTIVE: 1e-06
+SDP_SOLVER_MAX_PAIR_INEQ: 100000
+SDP_SOLVER_PAIR_PERC: 0.05
+SDP_SOLVER_MAX_TRIANGLE_INEQ: 100000
+SDP_SOLVER_TRIANGLE_PERC: 0.05
+
+
+|    N| NODE_PAR|    NODE|      LB_PAR|          LB|  FLAG|  TIME (s)| CP_ITER| CP_FLAG|   CP_INEQ|     PAIR  TRIANGLE    CLIQUE|          UB|         GUB|     I      J|     NODE_GAP|          GAP|  OPEN|
+|  150|       -1|       0|        -inf|     85.6573|     0|        41|       5|       0|      3778|    250.2      3230       0.2|     85.6707|    85.6707*|    -1     -1|  0.000157056|  0.000157056|     0|
+|  150|        0|       1|     85.6573|     85.6623|     0|         4|       0|       2|      3778|        0         0         0|     85.6707|     85.6707|   144    149|  9.87019e-05|  9.87019e-05|     0|
+|  149|        0|       2|     85.6573|     85.6665|     0|         4|       0|       2|      3091|        0         0         0|     85.6746|     85.6707|   144    149|  4.98345e-05|  4.98345e-05|     0|
+
+WALL_TIME: 51 sec
+N_NODES: 3
+AVG_INEQ: 1160.13
+AVG_CP_ITER: 1.66667
+ROOT_GAP: 0.000157056
+GAP: 0
+BEST: 85.6707
+

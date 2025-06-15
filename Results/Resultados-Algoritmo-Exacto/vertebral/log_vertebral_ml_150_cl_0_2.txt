@@ -1,0 +1,45 @@
+
+DATA_PATH, n, d, k: ../datasets/vertebral.txt 310 6 2
+CONSTRAINTS_PATH: ../constraints/vertebral/ml_150_cl_0_2.txt
+LOG_PATH: ../PRUEBAS/vertebral/log_vertebral_ml_150_cl_0_2.txt
+
+BRANCH_AND_BOUND_TOL: 0.0001
+BRANCH_AND_BOUND_PARALLEL: 16
+BRANCH_AND_BOUND_MAX_NODES: 200
+BRANCH_AND_BOUND_VISITING_STRATEGY: 0
+
+SDP_SOLVER_SESSION_THREADS_ROOT: 16
+SDP_SOLVER_SESSION_THREADS: 1
+SDP_SOLVER_FOLDER: /home/teresa/SDPNAL/SDPNAL+v1.0
+SDP_SOLVER_TOL: 1e-05
+SDP_SOLVER_VERBOSE: 0
+SDP_SOLVER_MAX_CP_ITER_ROOT: 80
+SDP_SOLVER_MAX_CP_ITER: 40
+SDP_SOLVER_CP_TOL: 1e-06
+SDP_SOLVER_MAX_INEQ: 100000
+SDP_SOLVER_INHERIT_PERC: 1
+SDP_SOLVER_EPS_INEQ: 0.0001
+SDP_SOLVER_EPS_ACTIVE: 1e-06
+SDP_SOLVER_MAX_PAIR_INEQ: 100000
+SDP_SOLVER_PAIR_PERC: 0.05
+SDP_SOLVER_MAX_TRIANGLE_INEQ: 100000
+SDP_SOLVER_TRIANGLE_PERC: 0.05
+
+
+|    N| NODE_PAR|    NODE|      LB_PAR|          LB|  FLAG|  TIME (s)| CP_ITER| CP_FLAG|   CP_INEQ|     PAIR  TRIANGLE    CLIQUE|          UB|         GUB|     I      J|     NODE_GAP|          GAP|  OPEN|
+|  160|       -1|       0|        -inf|      575635|     0|        39|       4|      -3|      7431|  1064.75      5000         0|      575740|     575740*|    -1     -1|  0.000182806|  0.000182806|     0|
+|  159|        0|       1|      575635|      575719|     0|         9|       1|       2|      7011|       72      5000         0|      575811|      575740|    25     60|  3.67278e-05|  3.67278e-05|     0|
+|  160|        0|       2|      575635|      575635|     0|        15|       1|      -3|      7431|       51      5000         0|      575740|      575740|    25     60|  0.000182806|  0.000182806|     0|
+|  160|        2|       3|      575635|      575635|     0|        11|       1|      -3|      7431|        0      2178         0|      575740|      575740|    75     79|  0.000182806|  0.000182806|     0|
+|  159|        2|       4|      575635|      575805|     0|        13|       1|       2|      7440|       52      5000         0|         inf|      575740|    75     79| -0.000112778| -0.000112778|     0|
+|  160|        3|       5|      575635|      575727|     0|         5|       0|       2|      7431|        0         0         0|      575740|      575740|    57     73|  2.18769e-05|  2.18769e-05|     0|
+|  159|        3|       6|      575635|      575709|     0|        11|       1|       2|      7412|      106      5000         0|      575856|      575740|    57     73|  5.38162e-05|  5.38162e-05|     0|
+
+WALL_TIME: 87 sec
+N_NODES: 7
+AVG_INEQ: 4074.82
+AVG_CP_ITER: 1.28571
+ROOT_GAP: 0.000182806
+GAP: 0
+BEST: 575740
+

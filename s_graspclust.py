@@ -16,6 +16,7 @@ class S_GRASPClust:
 
     Parameters:
     -----------
+        assignment (str): Type of assignment to use.
         Nmax (int): Maximum number of consecutive iterations without improvement.
         max_iter (int): Maximum number of iterations.
         Nmax_ls (int): Maximum number of consecutive local search iterations without improvement.
@@ -75,7 +76,7 @@ class S_GRASPClust:
                 dist_sums = np.array([distances[ml_gr, idx_centers[pk]].sum() for pk in possible_ks])
                 
                 # Select the centroid with the lowest sum of distances
-                ml_gr_k = possible_ks[np.argmin(dist_sums)]
+                ml_gr_k = possible_ks[np.argmin(dist_sums)] # idx in [0, len(idx_centers)-1]
                 
 
             elif self.__assignment=='greedy_rand_penalty':
@@ -90,7 +91,7 @@ class S_GRASPClust:
                 ])
 
                 # Invert distances and normalize so they sum to 1 to obtain selection probabilities and select a k
-                dist_sums[dist_sums == 0] = 1e-10   # evitar división entre 0
+                dist_sums[dist_sums == 0] = 1e-10   # avoid division by zero
                 probs = 1 / dist_sums 
                 probs /= probs.sum() 
                 ml_gr_k = possible_ks[np.random.choice(len(dist_sums), p=probs)]
@@ -124,8 +125,8 @@ class S_GRASPClust:
     Parameters:
     -----------
         D (np.ndarray): Data matrix of shape (n, d), where each row represents a point in d dimensions.
-        K (int): Number of clusters.
         distances (np.ndarray): Symmetric matrix of shape (n, n) containing squared distances between every pair of points in D.
+        K (int): Number of clusters.
         ML_groups (list of sets): Each set represents a group of points that must be in the same cluster.  
         CL_groups (list of sets): The set at the i-th position contains the indices of the ML groups that cannot be in the same cluster as group i.
 
@@ -180,7 +181,7 @@ class S_GRASPClust:
 
     Returns:
     --------
-        best_labels (np.ndarray): Array of shape (n,) containing the cluster assignments for the best solution
+        best_labels (np.ndarray): Array of shape (n,) containing the cluster assignments for the best solution.
         best_centers (np.ndarray): Matrix of shape (K, d) representing the final cluster centroids.
         best_score (float): Score of the best solution found.
         n_iter (int): Number of algorithm iterations.
@@ -191,7 +192,7 @@ class S_GRASPClust:
     def run(self, D, K, ML, CL, seed, ML_groups, CL_groups):
         start_time = time.time()
 
-        # Compute penalty for greedy assignment: average of the differences between the maximum and minimum value of each attribute × number of attributes x 0.5
+        # Compute penalty for greedy assignment: average of the differences between the maximum and minimum value of each attribute × number of attributes × 0.5
         if self.__assignment == 'greedy_rand_penalty':
             self.__greedy_penalty = np.mean(np.max(D, axis=0) - np.min(D, axis=0)) * D.shape[1] * 0.5
 

@@ -20,7 +20,7 @@ def get_args():
 
     parser.add_argument('--K', type=int, help='number of clusters')
 
-    parser.add_argument('--seed', type=int, help='seed for the pseudo-random number generator (provide it in order to have reproducible results)', default=None)
+    parser.add_argument('--seed', type=int, help='seed for the pseudo-random number generator', default=None)
 
     parser.add_argument('--verbose', help='activate verbose', action='store_true', default=False)
 
@@ -57,7 +57,7 @@ def get_args():
     
     parser.add_argument('--apply_LS_all', help='apply or not local search to all individuals in the population', action='store_true', default=False)
 
-    parser.add_argument('--restart', type=int, help='number of restart population', default=0)
+    parser.add_argument('--restart', type=int, help='number of restarts', default=0)
 
     parser.add_argument('--decrease_pop_size_reset', help='decrease or not population size at restarts', action='store_true', default=False)
 

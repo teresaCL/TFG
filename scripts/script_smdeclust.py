@@ -1,4 +1,5 @@
 """
+Script ejecutar el algoritmo S-MDEClust para todos los conjuntos de datos y guardar los resultados medios
 El script debe estar ubicado en el directorio raíz del proyecto.
 """
 import time
@@ -54,8 +55,8 @@ for data, k in datasets:
         # Argumentos para ejecutar el algoritmo
         programa = [
             "python", "main_smdeclust.py",
-            "--dataset", f"Data/{data}.txt",
-            "--constraints", f"Data/constraint_sets/{data}/{file}",
+            "--dataset", f"./Data/{data}.txt",
+            "--constraints", f"./Data/constraint_sets/{data}/{file}",
             "--seed", "42",
             "--mutation",
             "--P", "20",

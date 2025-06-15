@@ -4,26 +4,26 @@
 \hline
 Dataset & {{Score}} & {{Time (s)}} \\ 
 \hline
-Iris & {\color{black}+0.000} & {\color{red}+0.1} \\ 
-Wine & {\color{black}+0.000} & {\color{red}+0.3} \\ 
-Connectionist & {\color{black}+0.000} & {\color{red}+0.9} \\ 
+Iris & {\color{black}+0.000} & {\color{red}+0.2} \\ 
+Wine & {\color{black}+0.000} & {\color{blue}-0.1} \\ 
+Connectionist & {\color{black}+0.000} & {\color{red}+0.2} \\ 
 Seeds & {\color{black}+0.000} & {\color{black}+0.0} \\ 
-Heart & {\color{blue}-0.004} & {\color{red}+0.6} \\ 
-Vertebral & {\color{black}+0.000} & {\color{black}+0.0} \\ 
-Computers & {\color{blue}-0.149} & {\color{red}+3.0} \\ 
-Gene & {\color{black}+0.000} & {\color{red}+6.9} \\ 
-Movement Libras & {\color{red}+0.097} & {\color{red}+1.1} \\ 
-Toxicity & {\color{red}+1.000} & {\color{red}+0.1} \\ 
-ECG5000 & {\color{blue}-0.088} & {\color{red}+0.4} \\ 
-Ecoli & {\color{red}+0.002} & {\color{blue}-0.9} \\ 
-Glass & {\color{red}+0.003} & {\color{red}+2.9} \\ 
-Accent & {\color{red}+0.580} & {\color{red}+4.0} \\ 
+Heart & {\color{blue}-0.004} & {\color{blue}-0.4} \\ 
+Vertebral & {\color{black}+0.000} & {\color{blue}-0.1} \\ 
+Computers & {\color{blue}-0.149} & {\color{red}+1.6} \\ 
+Gene & {\color{black}+0.000} & {\color{blue}-24.2} \\ 
+Movement Libras & {\color{red}+0.129} & {\color{red}+4.6} \\ 
+Toxicity & {\color{black}+0.000} & {\color{red}+0.1} \\ 
+ECG5000 & {\color{blue}-0.084} & {\color{blue}-1.7} \\ 
+Ecoli & {\color{blue}-0.002} & {\color{blue}-0.8} \\ 
+Glass & {\color{blue}-0.006} & {\color{red}+0.9} \\ 
+Accent & {\color{red}+0.091} & {\color{blue}-1.4} \\ 
 \hline
-Promedio & {\color{red}+0.103} & {\color{red}+1.4} \\ 
+Promedio & {\color{blue}-0.002} & {\color{blue}-1.5} \\ 
 \hline
-Veces mejor & 3 & - \\ 
-Veces igual & 6 & - \\ 
-Veces peor & 5 & - \\ 
+Veces mejor & 5 & - \\ 
+Veces igual & 7 & - \\ 
+Veces peor & 2 & - \\ 
 \hline
 \end{tabular}
 \caption{Resultados SHADE}

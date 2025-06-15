@@ -4,19 +4,19 @@ import os
 import numpy as np
 
 """
-Parses command-line arguments for running the S-MDEClust algorithm
+Parses command-line arguments for running the GRASP algorithm
 """
 def get_args():
 
-    parser = argparse.ArgumentParser(description='GRASP algorithms for Global Multi-Objective Optimization')
+    parser = argparse.ArgumentParser(description='GRASP algorithm')
 
     parser.add_argument('--dataset', type=str, help='dataset path (CSV file required)')
 
     parser.add_argument('--constraints', type=str, help='constraints path (JSON file required)')
 
-    parser.add_argument('--K', type=int, help='number of clusters (if not provided, it is assumed by the labels of the dataset)', default=None)
+    parser.add_argument('--K', type=int, help='number of clusters', default=None)
 
-    parser.add_argument('--seed', type=int, help='seed for the pseudo-random number generator (provide it in order to have reproducible results)', default=None)
+    parser.add_argument('--seed', type=int, help='seed for the pseudo-random number generator', default=None)
 
     parser.add_argument('--verbose', help='Activate verbose', action='store_true', default=False)
 
@@ -46,8 +46,7 @@ def check_args(args):
     assert os.path.exists(args.dataset)
     assert os.path.exists(args.constraints)
 
-    if args.K is not None:
-        assert args.K > 0
+    assert args.K > 0
 
     if args.seed is not None:
         assert args.seed > 0

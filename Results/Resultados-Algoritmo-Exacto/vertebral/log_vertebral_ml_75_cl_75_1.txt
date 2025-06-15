@@ -1,0 +1,41 @@
+
+DATA_PATH, n, d, k: ../datasets/vertebral.txt 310 6 2
+CONSTRAINTS_PATH: ../constraints/vertebral/ml_75_cl_75_1.txt
+LOG_PATH: ../PRUEBAS/vertebral/log_vertebral_ml_75_cl_75_1.txt
+
+BRANCH_AND_BOUND_TOL: 0.0001
+BRANCH_AND_BOUND_PARALLEL: 16
+BRANCH_AND_BOUND_MAX_NODES: 200
+BRANCH_AND_BOUND_VISITING_STRATEGY: 0
+
+SDP_SOLVER_SESSION_THREADS_ROOT: 16
+SDP_SOLVER_SESSION_THREADS: 1
+SDP_SOLVER_FOLDER: /home/teresa/SDPNAL/SDPNAL+v1.0
+SDP_SOLVER_TOL: 1e-05
+SDP_SOLVER_VERBOSE: 0
+SDP_SOLVER_MAX_CP_ITER_ROOT: 80
+SDP_SOLVER_MAX_CP_ITER: 40
+SDP_SOLVER_CP_TOL: 1e-06
+SDP_SOLVER_MAX_INEQ: 100000
+SDP_SOLVER_INHERIT_PERC: 1
+SDP_SOLVER_EPS_INEQ: 0.0001
+SDP_SOLVER_EPS_ACTIVE: 1e-06
+SDP_SOLVER_MAX_PAIR_INEQ: 100000
+SDP_SOLVER_PAIR_PERC: 0.05
+SDP_SOLVER_MAX_TRIANGLE_INEQ: 100000
+SDP_SOLVER_TRIANGLE_PERC: 0.05
+
+
+|    N| NODE_PAR|    NODE|      LB_PAR|          LB|  FLAG|  TIME (s)| CP_ITER| CP_FLAG|   CP_INEQ|     PAIR  TRIANGLE    CLIQUE|          UB|         GUB|     I      J|     NODE_GAP|          GAP|  OPEN|
+|  200|       -1|       0|        -inf|      576345|     0|        91|       7|       0|      6700|      743      4159   18.8571|      576414|     576414*|    -1     -1|  0.000120345|  0.000120345|     0|
+|  199|        0|       1|      576345|      576367|     0|         8|       0|       2|      6070|        0         0         0|      576411|     576411*|    57    109|  7.63148e-05|  7.63148e-05|     0|
+|  200|        0|       2|      576345|      576368|     0|         9|       0|       2|      6700|        0         0         0|      576414|      576411|    57    109|  7.39816e-05|  7.39816e-05|     0|
+
+WALL_TIME: 106 sec
+N_NODES: 3
+AVG_INEQ: 1640.29
+AVG_CP_ITER: 2.33333
+ROOT_GAP: 0.000120345
+GAP: 0
+BEST: 576411
+

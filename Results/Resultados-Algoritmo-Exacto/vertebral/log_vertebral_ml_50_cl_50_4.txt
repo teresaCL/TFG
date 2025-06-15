@@ -1,0 +1,43 @@
+
+DATA_PATH, n, d, k: ../datasets/vertebral.txt 310 6 2
+CONSTRAINTS_PATH: ../constraints/vertebral/ml_50_cl_50_4.txt
+LOG_PATH: ../PRUEBAS/vertebral/log_vertebral_ml_50_cl_50_4.txt
+
+BRANCH_AND_BOUND_TOL: 0.0001
+BRANCH_AND_BOUND_PARALLEL: 16
+BRANCH_AND_BOUND_MAX_NODES: 200
+BRANCH_AND_BOUND_VISITING_STRATEGY: 0
+
+SDP_SOLVER_SESSION_THREADS_ROOT: 16
+SDP_SOLVER_SESSION_THREADS: 1
+SDP_SOLVER_FOLDER: /home/teresa/SDPNAL/SDPNAL+v1.0
+SDP_SOLVER_TOL: 1e-05
+SDP_SOLVER_VERBOSE: 0
+SDP_SOLVER_MAX_CP_ITER_ROOT: 80
+SDP_SOLVER_MAX_CP_ITER: 40
+SDP_SOLVER_CP_TOL: 1e-06
+SDP_SOLVER_MAX_INEQ: 100000
+SDP_SOLVER_INHERIT_PERC: 1
+SDP_SOLVER_EPS_INEQ: 0.0001
+SDP_SOLVER_EPS_ACTIVE: 1e-06
+SDP_SOLVER_MAX_PAIR_INEQ: 100000
+SDP_SOLVER_PAIR_PERC: 0.05
+SDP_SOLVER_MAX_TRIANGLE_INEQ: 100000
+SDP_SOLVER_TRIANGLE_PERC: 0.05
+
+
+|    N| NODE_PAR|    NODE|      LB_PAR|          LB|  FLAG|  TIME (s)| CP_ITER| CP_FLAG|   CP_INEQ|     PAIR  TRIANGLE    CLIQUE|          UB|         GUB|     I      J|     NODE_GAP|          GAP|  OPEN|
+|  244|       -1|       0|        -inf|      545308|     0|       144|       8|       3|      7581|     1136      4378     23.25|      545382|     545382*|    -1     -1|  0.000135935|  0.000135935|     0|
+|  244|        0|       1|      545308|      545308|     0|        11|       0|       0|      7581|        0         0         0|      545382|      545382|    61    121|  0.000135935|  0.000135935|     0|
+|  244|        1|       2|      545308|      545376|     0|         5|       0|       2|      7581|        0         0         0|      545382|      545382|    50     93|  1.13766e-05|  1.13766e-05|     0|
+|  243|        1|       3|      545308|      545389|     0|        16|       1|       2|     11964|        0      5000         0|         inf|      545382|    50     93| -1.25259e-05| -1.25259e-05|     0|
+|  243|        0|       4|      545308|      545330|     0|        32|       1|       2|      8523|      115      5000         0|      545413|      545382|    61    121|  9.53617e-05|  9.53617e-05|     0|
+
+WALL_TIME: 181 sec
+N_NODES: 5
+AVG_INEQ: 3130.45
+AVG_CP_ITER: 2
+ROOT_GAP: 0.000135935
+GAP: 0
+BEST: 545382
+

@@ -12,10 +12,16 @@ Implements the BLPKM algorithm.
 class BLPKM:
 
     """
-    Initializes the model with stopping criteria parameters.
-        
+    Initializes the model with the stopping criteria parameters.
+
+    Parameters:
+    -----------
         Nmax: Maximum number of consecutive iterations without improvement allowed.
         max_iter: Maximum number of iterations for the algorithm.
+
+    Returns:
+    --------
+        None
     """
     def __init__(self, Nmax, max_iter):
         self.__Nmax = Nmax  
@@ -143,9 +149,7 @@ class BLPKM:
 
         while n_iter < self.__max_iter:
             labels = self.assign_objects(D, centers, ML, CL)
-
             centers = self.update_centers(D, centers, K, labels)
-
             total_distance = self.get_total_distance(D, centers, labels)
 
             if total_distance >= best_total_distance:

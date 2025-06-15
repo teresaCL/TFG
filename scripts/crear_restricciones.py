@@ -1,3 +1,6 @@
+"""
+Script para generar los archivos de restricciones en formato json
+"""
 import os
 import json
 import random
@@ -39,10 +42,10 @@ def generate_constraints(data, n_ml, n_cl):
     cannot_link = random.sample(diff_label_pairs, min(n_cl, len(diff_label_pairs))) if len(diff_label_pairs) > 0 else []
 
     if len(same_label_pairs) < n_ml:
-        print(f"Se encontraron solo {len(same_label_pairs)} pares con la misma etiqueta, menor que {n_ml} restricciones ML solicitadas.")
+        print(f"[Advertencia] Se encontraron solo {len(same_label_pairs)} pares con la misma etiqueta, menor que {n_ml} restricciones ML solicitadas.")
 
     if len(diff_label_pairs) < n_cl:
-        print(f"Se encontraron solo {len(diff_label_pairs)} pares con distinta etiqueta, menor que {n_cl} restricciones CL solicitadas.")
+        print(f"[Advertencia] Se encontraron solo {len(diff_label_pairs)} pares con distinta etiqueta, menor que {n_cl} restricciones CL solicitadas.")
 
     return must_link, cannot_link
 
@@ -64,20 +67,21 @@ datasets = [
 ]
 
 # Directorio de datos restricciones
-data_folder = './Data'
-constraint_folder = './Data/constraint_sets'
+data_folder = '../Data/clases'
+constraint_folder = '../Data/constraint_sets'
 os.makedirs(data_folder, exist_ok=True)
 os.makedirs(constraint_folder, exist_ok=True)
 
 # Iterar sobre los archivos de datos y la lista de datasets
 for dataset_name, num1, num2 in datasets:
-    dataset_file = os.path.join(data_folder, f"{dataset_name}.txt")
+    dataset_file = os.path.join(data_folder, f"{dataset_name}_etiquetas.txt")
     
     # Comprobar si el archivo existe en el directorio
     if os.path.exists(dataset_file):
         print(f"Procesando {dataset_file}...")
         dataset = pd.read_csv(dataset_file, header=None)
         data = dataset.values
+        print(data.shape)
 
         # Crear la carpeta para las restricciones si no existe
         dataset_constraint_folder = os.path.join(constraint_folder, dataset_name)
