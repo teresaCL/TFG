@@ -23,7 +23,7 @@ Este repositorio contiene dos programas:
   **Ejemplo de uso**:
 
   ```sh
-  python main_smdeclust.py --dataset Data/iris.txt --constraints Data/constraint_sets/iris/ml_25_cl_25_0.json --P 20 --K 3 --assignment greedy_rand --crossover pbest_v1 --restart 3
+  python main_smdeclust.py --dataset Data/iris.txt --constraints Data/constraint_sets/iris/ml_25_cl_25_0.json --P 20 --K 3 --apply_LS_all assignment greedy_rand --crossover pbest_v1 --restart 3
   ```
 
 
@@ -32,7 +32,7 @@ Este repositorio contiene dos programas:
   **Ejemplo de uso**:
 
   ```sh
-  python main_grasp.py --dataset Data/iris.txt --constraints Data/constraint_sets/iris/ml_25_cl_25_0.json --P 20 --K 3 --assignment greedy --Nmax 3 --max_iter 30
+  python main_grasp.py --dataset Data/iris.txt --constraints Data/constraint_sets/iris/ml_25_cl_25_0.json --K 3 --assignment greedy --Nmax 3 --max_iter 30
   ```
 
 En los archivos ```args_utils_smdeclust.py``` y ```args_utils_grasp.py``` se pueden encontrar todos los posibles argumentos para cada programa.
