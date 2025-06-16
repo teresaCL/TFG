@@ -23,7 +23,7 @@ Este repositorio contiene dos programas:
   **Ejemplo de uso**:
 
   ```sh
-  python main_smdeclust.py --dataset Data/iris.txt --constraints Data/constraint_sets/iris/ml_25_cl_25_0.json --P 20 --K 3 --apply_LS_all assignment greedy_rand --crossover pbest_v1 --restart 3
+  python main_smdeclust.py --dataset Data/iris.txt --constraints Data/constraint_sets/iris/ml_25_cl_25_0.json --P 20 --K 3 --apply_LS_all --assignment greedy_rand --crossover pbest_v1 --restart 3
   ```
 
 
