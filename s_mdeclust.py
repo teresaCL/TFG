@@ -122,8 +122,9 @@ class S_MDEClust:
                 phi[n_p, :], psi[n_p, :, :], scores[n_p], n_iter = self.__ls.run(D, centers, K, ML, CL)
                 n_iter_ls += n_iter
             else:
-                phi[n_p, :] = self.assign_objects(D, psi[n_p], ML, CL, ML_groups, CL_groups, True)  # exact assignment step
-                scores[n_p] = self.calculate_fitness(D, psi[n_p], phi[n_p], ML, CL)
+                phi[n_p, :] = self.assign_objects(D, centers, ML, CL, ML_groups, CL_groups, True)  # exact assignment step
+                psi[n_p, :] = centers
+                scores[n_p] = self.calculate_fitness(D, centers, phi[n_p], ML, CL)
 
             if self.__verbose:
                 print('||' + str(-1).rjust(20) + ' |' + str(n_p+1).rjust(20) + ' |' + str(round(np.min(scores), 3)).rjust(20) + ' |' + 'N/A'.rjust(20) + ' |' + 'N/A'.rjust(20) + ' |' + str(n_p+1).rjust(20) + ' |' + str(n_iter_ls).rjust(20) + ' |' + str(round(time.time() - start_time, 3)).rjust(20) + ' ||')
